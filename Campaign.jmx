@@ -1,0 +1,1359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="caldera_campaign_audience" enabled="true">
+      <stringProp name="TestPlan.comments">This test plan was created by the BlazeMeter converter v.3.1.23. Please contact support@blazemeter.com for further support.</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="User-Agent" elementType="Header">
+            <stringProp name="Header.name">User-Agent</stringProp>
+            <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="BASE_URL_1" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_1</stringProp>
+            <stringProp name="Argument.value">stage-genie.apps.data-axle.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="BASE_URL_2" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_2</stringProp>
+            <stringProp name="Argument.value">caldera-server-bucket.s3-website-us-east-1.amazonaws.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="BASE_URL_3" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_3</stringProp>
+            <stringProp name="Argument.value">stage-caldera-writable-eks.s3.amazonaws.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="BASE_URL_4" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_4</stringProp>
+            <stringProp name="Argument.value">events.split.io</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="BASE_URL_5" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_5</stringProp>
+            <stringProp name="Argument.value">sdk-api.chamaileon.io</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="random" elementType="Argument">
+            <stringProp name="Argument.name">random</stringProp>
+            <stringProp name="Argument.value">lload_auto${__Random(0000,9999)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain"></stringProp>
+        <stringProp name="HTTPSampler.port"></stringProp>
+        <stringProp name="HTTPSampler.protocol"></stringProp>
+        <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+        <stringProp name="HTTPSampler.path"></stringProp>
+        <boolProp name="HTTPSampler.image_parser">true</boolProp>
+        <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+        <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <DNSCacheManager guiclass="DNSCachePanel" testclass="DNSCacheManager" testname="DNS Cache Manager" enabled="true">
+        <collectionProp name="DNSCacheManager.servers"/>
+        <boolProp name="DNSCacheManager.clearEachIteration">true</boolProp>
+        <boolProp name="DNSCacheManager.isCustomResolver">false</boolProp>
+      </DNSCacheManager>
+      <hashTree/>
+      <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
+        <collectionProp name="AuthManager.auth_list"/>
+        <boolProp name="AuthManager.controlledByThreadGroup">false</boolProp>
+      </AuthManager>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+        <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+        <boolProp name="clearEachIteration">true</boolProp>
+        <boolProp name="useExpires">false</boolProp>
+        <boolProp name="CacheManager.controlledByThread">false</boolProp>
+      </CacheManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">100</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">5</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration">0</stringProp>
+        <stringProp name="ThreadGroup.delay">0</stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Test" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;operationName&quot;:&quot;login&quot;,&quot;variables&quot;:{&quot;username&quot;:&quot;pankaj.rajwaniya@data-axle.com&quot;,&quot;password&quot;:&quot;Kipl@123&quot;},&quot;query&quot;:&quot;mutation login($username: Email!, $password: Secret!) {\n  loginUsingPassword(username: $username, password: $password) {\n    user {\n      ...FUserInfo\n      tenant {\n        ...FTenant\n        __typename\n      }\n      ...FUserPermission\n      __typename\n    }\n    accessToken\n    refreshToken\n    csrfToken\n    errors {\n      ...FAccountsError\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment FUserInfo on UserType {\n  id\n  name\n  lastLogin\n  email\n  database\n  initials\n  preferredUsername\n  username\n  phoneNumber\n  __typename\n}\n\nfragment FTenant on TenantType {\n  tenantName\n  __typename\n}\n\nfragment FUserPermission on UserType {\n  isStaff\n  isSuperuser\n  roles {\n    ...FRole\n    __typename\n  }\n  __typename\n}\n\nfragment FRole on RoleType {\n  id\n  name\n  __typename\n}\n\nfragment FAccountsError on AccountsError {\n  field\n  message\n  code\n  __typename\n}\n&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql/</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="sec-ch-ua" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua</stringProp>
+                  <stringProp name="Header.value">&quot;Chromium&quot;;v=&quot;106&quot;, &quot;Google Chrome&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;</stringProp>
+                </elementProp>
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                  <stringProp name="Header.value">?0</stringProp>
+                </elementProp>
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value"></stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-platform" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                  <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="AudienceListHomePage" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;operationName&quot;:&quot;AudienceListHomePage&quot;,&quot;variables&quot;:{&quot;name&quot;:&quot;&quot;,&quot;database&quot;:&quot;BUSINESS&quot;},&quot;query&quot;:&quot;query AudienceListHomePage($name: String, $ids: [ID], $database: String) {\n  audienceList(name_Icontains: $name, id_In: $ids, database: $database) {\n    edges {\n      node {\n        ...AudienceTypeFragment\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment AudienceTypeFragment on AudienceType {\n  contactType\n  createdAt\n  database\n  failReason\n  id\n  name\n  audienceSource\n  progress\n  recordsetId\n  status\n  updatedAt\n  __typename\n}\n&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql/</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="sec-ch-ua" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua</stringProp>
+                  <stringProp name="Header.value">&quot;Chromium&quot;;v=&quot;106&quot;, &quot;Google Chrome&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;</stringProp>
+                </elementProp>
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                  <stringProp name="Header.value">?0</stringProp>
+                </elementProp>
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">Bearer eyJraWQiOiJ2OE9MRWlVZlBCTnozTzZhMmF1ZjVsNytIK0RBOUI1SjJ4Q1dKdmVcL01FQT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkMzE4NzRiNi1kZTY5LTQzZDEtOTVjNy00OWNkNzYzNGQ5MTEiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9OVFhzYU5ZaTQiLCJjbGllbnRfaWQiOiI2ZG0zZDVwamJwazUwMG1vdThwZHNpOW1ncCIsIm9yaWdpbl9qdGkiOiIyNzMyZmUwNS05NmFiLTRlM2EtOTE1Ni02ZjBiZjUzY2RjMjAiLCJldmVudF9pZCI6ImMzYjNlYjExLTRhOTMtNDIwNC1hOWE3LWIwYzQwM2RhMjExOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE2NjU0ODUwNTIsImV4cCI6MTY2NTU3MTQ1MiwiaWF0IjoxNjY1NDg1MDUyLCJqdGkiOiJhYTdjMWE1Yy01MDc3LTQ4OWItYjRjMS1hMWQ5ZDhlNjA2NjYiLCJ1c2VybmFtZSI6IjVkZDU5MjVlLTQ5NDktMTFlZC1hYWI1LTgyNmI5NTg0MjIyMyJ9.Xw_HW0dWxNg8RlwuvRfQeZ1WFhCiK15Xn3aK-3ImBJNTbYqj5b15A01jwx4m-4zCkU7kW4Wl36HYqjJnXJNnVf5mPfEzMPrjuo0XI7go-p_6h1PuT-uJFxFZTO_J4zqIYd1C4mJjD_IUZfYcSVWLapu8FoMVwwttMk3HxlGU-thFENJq0Gis95XRk1tIFV-jfqaGAQDug_kq4CMrZp7HEO5-rXagyQ1j4TIiMHYr1t_y0gSPeZuKGZkGkckJQyEXK5eXZ6R9irQikdYjYtgN7Ezd_I0CNVcl25migSNApU2GbvuDQwarEQ1SNUXDP8c1zM2_uZkwBkQGttH9N9VlPg</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-platform" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                  <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="FileUpload_modify" enabled="false">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;operationName&quot;:&quot;FileUpload&quot;,&quot;variables&quot;:{&quot;fileName&quot;:&quot;univers.txt&quot;,&quot;uploadType&quot;:&quot;Audience&quot;},&quot;query&quot;:&quot;mutation FileUpload($fileName: String!, $uploadType: FileUploadType!) {\n  fileUpload(inquiry: {fileName: $fileName, uploadType: $uploadType}) {\n    errors {\n      field\n      message\n      __typename\n    }\n    bucketKey\n    uploadLink\n    __typename\n  }\n}\n&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql/</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="sec-ch-ua" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua</stringProp>
+                  <stringProp name="Header.value">&quot;Chromium&quot;;v=&quot;106&quot;, &quot;Google Chrome&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;</stringProp>
+                </elementProp>
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                  <stringProp name="Header.value">?0</stringProp>
+                </elementProp>
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">Bearer eyJraWQiOiJ2OE9MRWlVZlBCTnozTzZhMmF1ZjVsNytIK0RBOUI1SjJ4Q1dKdmVcL01FQT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkMzE4NzRiNi1kZTY5LTQzZDEtOTVjNy00OWNkNzYzNGQ5MTEiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9OVFhzYU5ZaTQiLCJjbGllbnRfaWQiOiI2ZG0zZDVwamJwazUwMG1vdThwZHNpOW1ncCIsIm9yaWdpbl9qdGkiOiIyNzMyZmUwNS05NmFiLTRlM2EtOTE1Ni02ZjBiZjUzY2RjMjAiLCJldmVudF9pZCI6ImMzYjNlYjExLTRhOTMtNDIwNC1hOWE3LWIwYzQwM2RhMjExOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE2NjU0ODUwNTIsImV4cCI6MTY2NTU3MTQ1MiwiaWF0IjoxNjY1NDg1MDUyLCJqdGkiOiJhYTdjMWE1Yy01MDc3LTQ4OWItYjRjMS1hMWQ5ZDhlNjA2NjYiLCJ1c2VybmFtZSI6IjVkZDU5MjVlLTQ5NDktMTFlZC1hYWI1LTgyNmI5NTg0MjIyMyJ9.Xw_HW0dWxNg8RlwuvRfQeZ1WFhCiK15Xn3aK-3ImBJNTbYqj5b15A01jwx4m-4zCkU7kW4Wl36HYqjJnXJNnVf5mPfEzMPrjuo0XI7go-p_6h1PuT-uJFxFZTO_J4zqIYd1C4mJjD_IUZfYcSVWLapu8FoMVwwttMk3HxlGU-thFENJq0Gis95XRk1tIFV-jfqaGAQDug_kq4CMrZp7HEO5-rXagyQ1j4TIiMHYr1t_y0gSPeZuKGZkGkckJQyEXK5eXZ6R9irQikdYjYtgN7Ezd_I0CNVcl25migSNApU2GbvuDQwarEQ1SNUXDP8c1zM2_uZkwBkQGttH9N9VlPg</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-platform" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                  <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="FileUpload" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;operationName&quot;:&quot;FileUpload&quot;,&quot;variables&quot;:{&quot;fileName&quot;:&quot;univers.txt&quot;,&quot;uploadType&quot;:&quot;Audience&quot;},&quot;query&quot;:&quot;mutation FileUpload($fileName: String!, $uploadType: FileUploadType!) {\n  fileUpload(inquiry: {fileName: $fileName, uploadType: $uploadType}) {\n    errors {\n      field\n      message\n      __typename\n    }\n    bucketKey\n    uploadLink\n    __typename\n  }\n}\n&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql/</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="sec-ch-ua" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua</stringProp>
+                  <stringProp name="Header.value">&quot;Chromium&quot;;v=&quot;106&quot;, &quot;Google Chrome&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;</stringProp>
+                </elementProp>
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                  <stringProp name="Header.value">?0</stringProp>
+                </elementProp>
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">Bearer eyJraWQiOiJ2OE9MRWlVZlBCTnozTzZhMmF1ZjVsNytIK0RBOUI1SjJ4Q1dKdmVcL01FQT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkMzE4NzRiNi1kZTY5LTQzZDEtOTVjNy00OWNkNzYzNGQ5MTEiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9OVFhzYU5ZaTQiLCJjbGllbnRfaWQiOiI2ZG0zZDVwamJwazUwMG1vdThwZHNpOW1ncCIsIm9yaWdpbl9qdGkiOiIyNzMyZmUwNS05NmFiLTRlM2EtOTE1Ni02ZjBiZjUzY2RjMjAiLCJldmVudF9pZCI6ImMzYjNlYjExLTRhOTMtNDIwNC1hOWE3LWIwYzQwM2RhMjExOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE2NjU0ODUwNTIsImV4cCI6MTY2NTU3MTQ1MiwiaWF0IjoxNjY1NDg1MDUyLCJqdGkiOiJhYTdjMWE1Yy01MDc3LTQ4OWItYjRjMS1hMWQ5ZDhlNjA2NjYiLCJ1c2VybmFtZSI6IjVkZDU5MjVlLTQ5NDktMTFlZC1hYWI1LTgyNmI5NTg0MjIyMyJ9.Xw_HW0dWxNg8RlwuvRfQeZ1WFhCiK15Xn3aK-3ImBJNTbYqj5b15A01jwx4m-4zCkU7kW4Wl36HYqjJnXJNnVf5mPfEzMPrjuo0XI7go-p_6h1PuT-uJFxFZTO_J4zqIYd1C4mJjD_IUZfYcSVWLapu8FoMVwwttMk3HxlGU-thFENJq0Gis95XRk1tIFV-jfqaGAQDug_kq4CMrZp7HEO5-rXagyQ1j4TIiMHYr1t_y0gSPeZuKGZkGkckJQyEXK5eXZ6R9irQikdYjYtgN7Ezd_I0CNVcl25migSNApU2GbvuDQwarEQ1SNUXDP8c1zM2_uZkwBkQGttH9N9VlPg</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-platform" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                  <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="AudienceUploadCreate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;operationName&quot;:&quot;AudienceUploadCreate&quot;,&quot;variables&quot;:{&quot;database&quot;:&quot;BUSINESS&quot;,&quot;contactType&quot;:&quot;PROSPECT&quot;,&quot;temporaryBucketKey&quot;:&quot;audience-management/temp/fa7d3dee-86ae-434d-8be5-83608078d283/ec32970b-d53d-4f4d-98c2-7eccbd78284f/univers.txt&quot;},&quot;query&quot;:&quot;mutation AudienceUploadCreate($database: DatabaseType!, $contactType: ContactType!, $temporaryBucketKey: String) {\n  audienceUploadCreate(\n    input: {database: $database, contactType: $contactType, temporaryBucketKey: $temporaryBucketKey}\n  ) {\n    errors {\n      ...AudienceErrorFragment\n      __typename\n    }\n    audienceUpload {\n      id\n      fileName\n      sampleRecords\n      suggestedFieldMappings {\n        dataAxleColumn\n        fileColumn\n        __typename\n      }\n      providerFields {\n        id\n        label\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment AudienceErrorFragment on AudienceError {\n  field\n  code\n  message\n  __typename\n}\n&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql/</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="sec-ch-ua" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua</stringProp>
+                  <stringProp name="Header.value">&quot;Chromium&quot;;v=&quot;106&quot;, &quot;Google Chrome&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;</stringProp>
+                </elementProp>
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                  <stringProp name="Header.value">?0</stringProp>
+                </elementProp>
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">Bearer eyJraWQiOiJ2OE9MRWlVZlBCTnozTzZhMmF1ZjVsNytIK0RBOUI1SjJ4Q1dKdmVcL01FQT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkMzE4NzRiNi1kZTY5LTQzZDEtOTVjNy00OWNkNzYzNGQ5MTEiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9OVFhzYU5ZaTQiLCJjbGllbnRfaWQiOiI2ZG0zZDVwamJwazUwMG1vdThwZHNpOW1ncCIsIm9yaWdpbl9qdGkiOiIyNzMyZmUwNS05NmFiLTRlM2EtOTE1Ni02ZjBiZjUzY2RjMjAiLCJldmVudF9pZCI6ImMzYjNlYjExLTRhOTMtNDIwNC1hOWE3LWIwYzQwM2RhMjExOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE2NjU0ODUwNTIsImV4cCI6MTY2NTU3MTQ1MiwiaWF0IjoxNjY1NDg1MDUyLCJqdGkiOiJhYTdjMWE1Yy01MDc3LTQ4OWItYjRjMS1hMWQ5ZDhlNjA2NjYiLCJ1c2VybmFtZSI6IjVkZDU5MjVlLTQ5NDktMTFlZC1hYWI1LTgyNmI5NTg0MjIyMyJ9.Xw_HW0dWxNg8RlwuvRfQeZ1WFhCiK15Xn3aK-3ImBJNTbYqj5b15A01jwx4m-4zCkU7kW4Wl36HYqjJnXJNnVf5mPfEzMPrjuo0XI7go-p_6h1PuT-uJFxFZTO_J4zqIYd1C4mJjD_IUZfYcSVWLapu8FoMVwwttMk3HxlGU-thFENJq0Gis95XRk1tIFV-jfqaGAQDug_kq4CMrZp7HEO5-rXagyQ1j4TIiMHYr1t_y0gSPeZuKGZkGkckJQyEXK5eXZ6R9irQikdYjYtgN7Ezd_I0CNVcl25migSNApU2GbvuDQwarEQ1SNUXDP8c1zM2_uZkwBkQGttH9N9VlPg</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-platform" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                  <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="AudienceUploadCreate_Modify" enabled="false">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;operationName&quot;:&quot;AudienceUploadCreate&quot;,&quot;variables&quot;:{&quot;database&quot;:&quot;BUSINESS&quot;,&quot;contactType&quot;:&quot;PROSPECT&quot;,&quot;temporaryBucketKey&quot;:&quot;audience-management/temp/fa7d3dee-86ae-434d-8be5-83608078d283/ec32970b-d53d-4f4d-98c2-7eccbd78284f/${random}.txt&quot;},&quot;query&quot;:&quot;mutation AudienceUploadCreate($database: DatabaseType!, $contactType: ContactType!, $temporaryBucketKey: String) {\n  audienceUploadCreate(\n    input: {database: $database, contactType: $contactType, temporaryBucketKey: $temporaryBucketKey}\n  ) {\n    errors {\n      ...AudienceErrorFragment\n      __typename\n    }\n    audienceUpload {\n      id\n      fileName\n      sampleRecords\n      suggestedFieldMappings {\n        dataAxleColumn\n        fileColumn\n        __typename\n      }\n      providerFields {\n        id\n        label\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment AudienceErrorFragment on AudienceError {\n  field\n  code\n  message\n  __typename\n}\n&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql/</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="sec-ch-ua" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua</stringProp>
+                  <stringProp name="Header.value">&quot;Chromium&quot;;v=&quot;106&quot;, &quot;Google Chrome&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;</stringProp>
+                </elementProp>
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                  <stringProp name="Header.value">?0</stringProp>
+                </elementProp>
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">Bearer eyJraWQiOiJ2OE9MRWlVZlBCTnozTzZhMmF1ZjVsNytIK0RBOUI1SjJ4Q1dKdmVcL01FQT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkMzE4NzRiNi1kZTY5LTQzZDEtOTVjNy00OWNkNzYzNGQ5MTEiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9OVFhzYU5ZaTQiLCJjbGllbnRfaWQiOiI2ZG0zZDVwamJwazUwMG1vdThwZHNpOW1ncCIsIm9yaWdpbl9qdGkiOiIyNzMyZmUwNS05NmFiLTRlM2EtOTE1Ni02ZjBiZjUzY2RjMjAiLCJldmVudF9pZCI6ImMzYjNlYjExLTRhOTMtNDIwNC1hOWE3LWIwYzQwM2RhMjExOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE2NjU0ODUwNTIsImV4cCI6MTY2NTU3MTQ1MiwiaWF0IjoxNjY1NDg1MDUyLCJqdGkiOiJhYTdjMWE1Yy01MDc3LTQ4OWItYjRjMS1hMWQ5ZDhlNjA2NjYiLCJ1c2VybmFtZSI6IjVkZDU5MjVlLTQ5NDktMTFlZC1hYWI1LTgyNmI5NTg0MjIyMyJ9.Xw_HW0dWxNg8RlwuvRfQeZ1WFhCiK15Xn3aK-3ImBJNTbYqj5b15A01jwx4m-4zCkU7kW4Wl36HYqjJnXJNnVf5mPfEzMPrjuo0XI7go-p_6h1PuT-uJFxFZTO_J4zqIYd1C4mJjD_IUZfYcSVWLapu8FoMVwwttMk3HxlGU-thFENJq0Gis95XRk1tIFV-jfqaGAQDug_kq4CMrZp7HEO5-rXagyQ1j4TIiMHYr1t_y0gSPeZuKGZkGkckJQyEXK5eXZ6R9irQikdYjYtgN7Ezd_I0CNVcl25migSNApU2GbvuDQwarEQ1SNUXDP8c1zM2_uZkwBkQGttH9N9VlPg</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-platform" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                  <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="AudienceUploadValidateFieldMappingConstraint" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;operationName&quot;:&quot;AudienceUploadValidateFieldMappingConstraint&quot;,&quot;variables&quot;:{&quot;audienceUploadId&quot;:&quot;QXVkaWVuY2VVcGxvYWRUeXBlOjM1MThhNTcyLWM3ZjQtNDM2ZC1iZTdjLTUyYjhhOWM2MzE4MA==&quot;,&quot;userFieldMappings&quot;:[{&quot;fileColumnName&quot;:&quot;Infogroup ID&quot;,&quot;dataAxleColumn&quot;:&quot;QXVkaWVuY2VVcGxvYWRGaWVsZFR5cGU6NTZmZGI2MGEtM2NlMC00NGRjLThlMGUtNzE1NGViMDM4NzE1&quot;}]},&quot;query&quot;:&quot;mutation AudienceUploadValidateFieldMappingConstraint($audienceUploadId: ID!, $userFieldMappings: [UserFieldMapping!]!) {\n  audienceUploadValidateFieldMappingConstraint(\n    inquiry: {audienceUploadId: $audienceUploadId, userFieldMappings: $userFieldMappings}\n  ) {\n    errors {\n      ...AudienceErrorFragment\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment AudienceErrorFragment on AudienceError {\n  field\n  code\n  message\n  __typename\n}\n&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql/</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="sec-ch-ua" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua</stringProp>
+                  <stringProp name="Header.value">&quot;Chromium&quot;;v=&quot;106&quot;, &quot;Google Chrome&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;</stringProp>
+                </elementProp>
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                  <stringProp name="Header.value">?0</stringProp>
+                </elementProp>
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">Bearer eyJraWQiOiJ2OE9MRWlVZlBCTnozTzZhMmF1ZjVsNytIK0RBOUI1SjJ4Q1dKdmVcL01FQT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkMzE4NzRiNi1kZTY5LTQzZDEtOTVjNy00OWNkNzYzNGQ5MTEiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9OVFhzYU5ZaTQiLCJjbGllbnRfaWQiOiI2ZG0zZDVwamJwazUwMG1vdThwZHNpOW1ncCIsIm9yaWdpbl9qdGkiOiIyNzMyZmUwNS05NmFiLTRlM2EtOTE1Ni02ZjBiZjUzY2RjMjAiLCJldmVudF9pZCI6ImMzYjNlYjExLTRhOTMtNDIwNC1hOWE3LWIwYzQwM2RhMjExOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE2NjU0ODUwNTIsImV4cCI6MTY2NTU3MTQ1MiwiaWF0IjoxNjY1NDg1MDUyLCJqdGkiOiJhYTdjMWE1Yy01MDc3LTQ4OWItYjRjMS1hMWQ5ZDhlNjA2NjYiLCJ1c2VybmFtZSI6IjVkZDU5MjVlLTQ5NDktMTFlZC1hYWI1LTgyNmI5NTg0MjIyMyJ9.Xw_HW0dWxNg8RlwuvRfQeZ1WFhCiK15Xn3aK-3ImBJNTbYqj5b15A01jwx4m-4zCkU7kW4Wl36HYqjJnXJNnVf5mPfEzMPrjuo0XI7go-p_6h1PuT-uJFxFZTO_J4zqIYd1C4mJjD_IUZfYcSVWLapu8FoMVwwttMk3HxlGU-thFENJq0Gis95XRk1tIFV-jfqaGAQDug_kq4CMrZp7HEO5-rXagyQ1j4TIiMHYr1t_y0gSPeZuKGZkGkckJQyEXK5eXZ6R9irQikdYjYtgN7Ezd_I0CNVcl25migSNApU2GbvuDQwarEQ1SNUXDP8c1zM2_uZkwBkQGttH9N9VlPg</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-platform" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                  <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ValidateName" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;operationName&quot;:&quot;ValidateName&quot;,&quot;variables&quot;:{&quot;value&quot;:&quot;${random}&quot;},&quot;query&quot;:&quot;mutation ValidateName($value: String!) {\n  validateName(inquiry: {model: AUDIENCE, value: $value}) {\n    errors {\n      message\n      code\n      field\n      __typename\n    }\n    __typename\n  }\n}\n&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql/</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="sec-ch-ua" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua</stringProp>
+                  <stringProp name="Header.value">&quot;Chromium&quot;;v=&quot;106&quot;, &quot;Google Chrome&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;</stringProp>
+                </elementProp>
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                  <stringProp name="Header.value">?0</stringProp>
+                </elementProp>
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">Bearer eyJraWQiOiJ2OE9MRWlVZlBCTnozTzZhMmF1ZjVsNytIK0RBOUI1SjJ4Q1dKdmVcL01FQT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkMzE4NzRiNi1kZTY5LTQzZDEtOTVjNy00OWNkNzYzNGQ5MTEiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9OVFhzYU5ZaTQiLCJjbGllbnRfaWQiOiI2ZG0zZDVwamJwazUwMG1vdThwZHNpOW1ncCIsIm9yaWdpbl9qdGkiOiIyNzMyZmUwNS05NmFiLTRlM2EtOTE1Ni02ZjBiZjUzY2RjMjAiLCJldmVudF9pZCI6ImMzYjNlYjExLTRhOTMtNDIwNC1hOWE3LWIwYzQwM2RhMjExOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE2NjU0ODUwNTIsImV4cCI6MTY2NTU3MTQ1MiwiaWF0IjoxNjY1NDg1MDUyLCJqdGkiOiJhYTdjMWE1Yy01MDc3LTQ4OWItYjRjMS1hMWQ5ZDhlNjA2NjYiLCJ1c2VybmFtZSI6IjVkZDU5MjVlLTQ5NDktMTFlZC1hYWI1LTgyNmI5NTg0MjIyMyJ9.Xw_HW0dWxNg8RlwuvRfQeZ1WFhCiK15Xn3aK-3ImBJNTbYqj5b15A01jwx4m-4zCkU7kW4Wl36HYqjJnXJNnVf5mPfEzMPrjuo0XI7go-p_6h1PuT-uJFxFZTO_J4zqIYd1C4mJjD_IUZfYcSVWLapu8FoMVwwttMk3HxlGU-thFENJq0Gis95XRk1tIFV-jfqaGAQDug_kq4CMrZp7HEO5-rXagyQ1j4TIiMHYr1t_y0gSPeZuKGZkGkckJQyEXK5eXZ6R9irQikdYjYtgN7Ezd_I0CNVcl25migSNApU2GbvuDQwarEQ1SNUXDP8c1zM2_uZkwBkQGttH9N9VlPg</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-platform" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                  <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Split IO" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">[{&quot;f&quot;:&quot;purchase_access_DSS3-5164&quot;,&quot;i&quot;:[{&quot;k&quot;:&quot;VXNlclR5cGU6ZmE3ZDNkZWUtODZhZS00MzRkLThiZTUtODM2MDgwNzhkMjgz&quot;,&quot;t&quot;:&quot;control&quot;,&quot;m&quot;:1665484804007,&quot;r&quot;:&quot;not ready&quot;},{&quot;k&quot;:&quot;VXNlclR5cGU6ZmE3ZDNkZWUtODZhZS00MzRkLThiZTUtODM2MDgwNzhkMjgz&quot;,&quot;t&quot;:&quot;on&quot;,&quot;m&quot;:1665484804456,&quot;c&quot;:1664809591821,&quot;r&quot;:&quot;default rule&quot;}]},{&quot;f&quot;:&quot;campaigns_access_DSS3-5164&quot;,&quot;i&quot;:[{&quot;k&quot;:&quot;VXNlclR5cGU6ZmE3ZDNkZWUtODZhZS00MzRkLThiZTUtODM2MDgwNzhkMjgz&quot;,&quot;t&quot;:&quot;control&quot;,&quot;m&quot;:1665484804007,&quot;r&quot;:&quot;not ready&quot;},{&quot;k&quot;:&quot;VXNlclR5cGU6ZmE3ZDNkZWUtODZhZS00MzRkLThiZTUtODM2MDgwNzhkMjgz&quot;,&quot;t&quot;:&quot;on&quot;,&quot;m&quot;:1665484804457,&quot;c&quot;:1665148192316,&quot;r&quot;:&quot;default rule&quot;}]},{&quot;f&quot;:&quot;audiencedash_functions_DSS3-5164&quot;,&quot;i&quot;:[{&quot;k&quot;:&quot;VXNlclR5cGU6ZmE3ZDNkZWUtODZhZS00MzRkLThiZTUtODM2MDgwNzhkMjgz&quot;,&quot;t&quot;:&quot;control&quot;,&quot;m&quot;:1665484804017,&quot;r&quot;:&quot;not ready&quot;},{&quot;k&quot;:&quot;VXNlclR5cGU6ZmE3ZDNkZWUtODZhZS00MzRkLThiZTUtODM2MDgwNzhkMjgz&quot;,&quot;t&quot;:&quot;on&quot;,&quot;m&quot;:1665484804464,&quot;c&quot;:1664809558720,&quot;r&quot;:&quot;default rule&quot;}]},{&quot;f&quot;:&quot;search_access_DSS3-5164&quot;,&quot;i&quot;:[{&quot;k&quot;:&quot;VXNlclR5cGU6ZmE3ZDNkZWUtODZhZS00MzRkLThiZTUtODM2MDgwNzhkMjgz&quot;,&quot;t&quot;:&quot;control&quot;,&quot;m&quot;:1665484804017,&quot;r&quot;:&quot;not ready&quot;},{&quot;k&quot;:&quot;VXNlclR5cGU6ZmE3ZDNkZWUtODZhZS00MzRkLThiZTUtODM2MDgwNzhkMjgz&quot;,&quot;t&quot;:&quot;on&quot;,&quot;m&quot;:1665484804464,&quot;c&quot;:1665403733991,&quot;r&quot;:&quot;default rule&quot;}]}]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_4}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">api/testImpressions/bulk</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="sec-ch-ua" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua</stringProp>
+                  <stringProp name="Header.value">&quot;Chromium&quot;;v=&quot;106&quot;, &quot;Google Chrome&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;</stringProp>
+                </elementProp>
+                <elementProp name="SplitSDKImpressionsMode" elementType="Header">
+                  <stringProp name="Header.name">SplitSDKImpressionsMode</stringProp>
+                  <stringProp name="Header.value">OPTIMIZED</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                  <stringProp name="Header.value">?0</stringProp>
+                </elementProp>
+                <elementProp name="SplitSDKVersion" elementType="Header">
+                  <stringProp name="Header.name">SplitSDKVersion</stringProp>
+                  <stringProp name="Header.value">react-1.6.0</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer h3glovhfpjnd5bhovo2gj4772elphr87kua5</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-platform" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                  <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Match Audience" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;operationName&quot;:&quot;MatchAudience&quot;,&quot;variables&quot;:{&quot;audienceUploadId&quot;:&quot;QXVkaWVuY2VVcGxvYWRUeXBlOjM1MThhNTcyLWM3ZjQtNDM2ZC1iZTdjLTUyYjhhOWM2MzE4MA==&quot;,&quot;audienceName&quot;:&quot;Load Test&quot;,&quot;userFieldMappings&quot;:[{&quot;fileColumnName&quot;:&quot;Infogroup ID&quot;,&quot;dataAxleColumn&quot;:&quot;QXVkaWVuY2VVcGxvYWRGaWVsZFR5cGU6NTZmZGI2MGEtM2NlMC00NGRjLThlMGUtNzE1NGViMDM4NzE1&quot;}],&quot;contactType&quot;:&quot;PROSPECT&quot;},&quot;query&quot;:&quot;mutation MatchAudience($audienceUploadId: ID!, $userFieldMappings: [UserFieldMapping!]!, $audienceName: String!, $contactType: ContactType!) {\n  matchAudience(\n    id: $audienceUploadId\n    input: {audienceName: $audienceName, userFieldMappings: $userFieldMappings, contactType: $contactType}\n  ) {\n    audienceUpload {\n      id\n      __typename\n    }\n    __typename\n  }\n}\n&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql/</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="sec-ch-ua" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua</stringProp>
+                  <stringProp name="Header.value">&quot;Chromium&quot;;v=&quot;106&quot;, &quot;Google Chrome&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;</stringProp>
+                </elementProp>
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                  <stringProp name="Header.value">?0</stringProp>
+                </elementProp>
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">Bearer eyJraWQiOiJ2OE9MRWlVZlBCTnozTzZhMmF1ZjVsNytIK0RBOUI1SjJ4Q1dKdmVcL01FQT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkMzE4NzRiNi1kZTY5LTQzZDEtOTVjNy00OWNkNzYzNGQ5MTEiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9OVFhzYU5ZaTQiLCJjbGllbnRfaWQiOiI2ZG0zZDVwamJwazUwMG1vdThwZHNpOW1ncCIsIm9yaWdpbl9qdGkiOiIyNzMyZmUwNS05NmFiLTRlM2EtOTE1Ni02ZjBiZjUzY2RjMjAiLCJldmVudF9pZCI6ImMzYjNlYjExLTRhOTMtNDIwNC1hOWE3LWIwYzQwM2RhMjExOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE2NjU0ODUwNTIsImV4cCI6MTY2NTU3MTQ1MiwiaWF0IjoxNjY1NDg1MDUyLCJqdGkiOiJhYTdjMWE1Yy01MDc3LTQ4OWItYjRjMS1hMWQ5ZDhlNjA2NjYiLCJ1c2VybmFtZSI6IjVkZDU5MjVlLTQ5NDktMTFlZC1hYWI1LTgyNmI5NTg0MjIyMyJ9.Xw_HW0dWxNg8RlwuvRfQeZ1WFhCiK15Xn3aK-3ImBJNTbYqj5b15A01jwx4m-4zCkU7kW4Wl36HYqjJnXJNnVf5mPfEzMPrjuo0XI7go-p_6h1PuT-uJFxFZTO_J4zqIYd1C4mJjD_IUZfYcSVWLapu8FoMVwwttMk3HxlGU-thFENJq0Gis95XRk1tIFV-jfqaGAQDug_kq4CMrZp7HEO5-rXagyQ1j4TIiMHYr1t_y0gSPeZuKGZkGkckJQyEXK5eXZ6R9irQikdYjYtgN7Ezd_I0CNVcl25migSNApU2GbvuDQwarEQ1SNUXDP8c1zM2_uZkwBkQGttH9N9VlPg</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-platform" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                  <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="RecordsetTallies" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;operationName&quot;:&quot;RecordsetTallies&quot;,&quot;variables&quot;:{&quot;database&quot;:&quot;BUSINESS&quot;,&quot;recordsetIds&quot;:[&quot;72bf5ef8-4e88-4ad4-88fc-877e1ee9870c&quot;]},&quot;query&quot;:&quot;query RecordsetTallies($database: DatabaseType!, $recordsetIds: [String]) {\n  recordsetTallies(database: $database, recordsetIds: $recordsetIds) {\n    recordsetId\n    customerCount\n    prospectCount\n    workedCount\n    __typename\n  }\n}\n&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql/</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="sec-ch-ua" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua</stringProp>
+                  <stringProp name="Header.value">&quot;Chromium&quot;;v=&quot;106&quot;, &quot;Google Chrome&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;</stringProp>
+                </elementProp>
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                  <stringProp name="Header.value">?0</stringProp>
+                </elementProp>
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">Bearer eyJraWQiOiJ2OE9MRWlVZlBCTnozTzZhMmF1ZjVsNytIK0RBOUI1SjJ4Q1dKdmVcL01FQT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkMzE4NzRiNi1kZTY5LTQzZDEtOTVjNy00OWNkNzYzNGQ5MTEiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9OVFhzYU5ZaTQiLCJjbGllbnRfaWQiOiI2ZG0zZDVwamJwazUwMG1vdThwZHNpOW1ncCIsIm9yaWdpbl9qdGkiOiIyNzMyZmUwNS05NmFiLTRlM2EtOTE1Ni02ZjBiZjUzY2RjMjAiLCJldmVudF9pZCI6ImMzYjNlYjExLTRhOTMtNDIwNC1hOWE3LWIwYzQwM2RhMjExOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE2NjU0ODUwNTIsImV4cCI6MTY2NTU3MTQ1MiwiaWF0IjoxNjY1NDg1MDUyLCJqdGkiOiJhYTdjMWE1Yy01MDc3LTQ4OWItYjRjMS1hMWQ5ZDhlNjA2NjYiLCJ1c2VybmFtZSI6IjVkZDU5MjVlLTQ5NDktMTFlZC1hYWI1LTgyNmI5NTg0MjIyMyJ9.Xw_HW0dWxNg8RlwuvRfQeZ1WFhCiK15Xn3aK-3ImBJNTbYqj5b15A01jwx4m-4zCkU7kW4Wl36HYqjJnXJNnVf5mPfEzMPrjuo0XI7go-p_6h1PuT-uJFxFZTO_J4zqIYd1C4mJjD_IUZfYcSVWLapu8FoMVwwttMk3HxlGU-thFENJq0Gis95XRk1tIFV-jfqaGAQDug_kq4CMrZp7HEO5-rXagyQ1j4TIiMHYr1t_y0gSPeZuKGZkGkckJQyEXK5eXZ6R9irQikdYjYtgN7Ezd_I0CNVcl25migSNApU2GbvuDQwarEQ1SNUXDP8c1zM2_uZkwBkQGttH9N9VlPg</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-platform" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                  <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="AudienceList" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;operationName&quot;:&quot;AudienceList&quot;,&quot;variables&quot;:{&quot;ids&quot;:[&quot;QXVkaWVuY2VUeXBlOjllYTZjNzM2LTNiMmItNDUyNi1iODYxLTk0MGQ0OWQzYTU5NA==&quot;]},&quot;query&quot;:&quot;query AudienceList($name: String, $ids: [ID], $database: String) {\n  audienceList(name_Icontains: $name, id_In: $ids, database: $database) {\n    edges {\n      node {\n        ...AudienceTypeFragment\n        totalRecords\n        matchedRecords\n        importedFileDownloadLink\n        matchedPercentage\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment AudienceTypeFragment on AudienceType {\n  contactType\n  createdAt\n  database\n  failReason\n  id\n  name\n  audienceSource\n  progress\n  recordsetId\n  status\n  updatedAt\n  __typename\n}\n&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql/</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="sec-ch-ua" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua</stringProp>
+                  <stringProp name="Header.value">&quot;Chromium&quot;;v=&quot;106&quot;, &quot;Google Chrome&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;</stringProp>
+                </elementProp>
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                  <stringProp name="Header.value">?0</stringProp>
+                </elementProp>
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">Bearer eyJraWQiOiJ2OE9MRWlVZlBCTnozTzZhMmF1ZjVsNytIK0RBOUI1SjJ4Q1dKdmVcL01FQT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkMzE4NzRiNi1kZTY5LTQzZDEtOTVjNy00OWNkNzYzNGQ5MTEiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9OVFhzYU5ZaTQiLCJjbGllbnRfaWQiOiI2ZG0zZDVwamJwazUwMG1vdThwZHNpOW1ncCIsIm9yaWdpbl9qdGkiOiIyNzMyZmUwNS05NmFiLTRlM2EtOTE1Ni02ZjBiZjUzY2RjMjAiLCJldmVudF9pZCI6ImMzYjNlYjExLTRhOTMtNDIwNC1hOWE3LWIwYzQwM2RhMjExOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE2NjU0ODUwNTIsImV4cCI6MTY2NTU3MTQ1MiwiaWF0IjoxNjY1NDg1MDUyLCJqdGkiOiJhYTdjMWE1Yy01MDc3LTQ4OWItYjRjMS1hMWQ5ZDhlNjA2NjYiLCJ1c2VybmFtZSI6IjVkZDU5MjVlLTQ5NDktMTFlZC1hYWI1LTgyNmI5NTg0MjIyMyJ9.Xw_HW0dWxNg8RlwuvRfQeZ1WFhCiK15Xn3aK-3ImBJNTbYqj5b15A01jwx4m-4zCkU7kW4Wl36HYqjJnXJNnVf5mPfEzMPrjuo0XI7go-p_6h1PuT-uJFxFZTO_J4zqIYd1C4mJjD_IUZfYcSVWLapu8FoMVwwttMk3HxlGU-thFENJq0Gis95XRk1tIFV-jfqaGAQDug_kq4CMrZp7HEO5-rXagyQ1j4TIiMHYr1t_y0gSPeZuKGZkGkckJQyEXK5eXZ6R9irQikdYjYtgN7Ezd_I0CNVcl25migSNApU2GbvuDQwarEQ1SNUXDP8c1zM2_uZkwBkQGttH9N9VlPg</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-platform" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                  <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Insights" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;operationName&quot;:&quot;Insights&quot;,&quot;variables&quot;:{&quot;database&quot;:&quot;BUSINESS&quot;,&quot;tallies&quot;:[&quot;EMPLOYEE_SIZE&quot;,&quot;YEARS_IN_BUSINESS&quot;,&quot;SQUARE_FOOTAGE&quot;,&quot;CREDIT_RATING&quot;],&quot;audienceId&quot;:&quot;QXVkaWVuY2VUeXBlOjllYTZjNzM2LTNiMmItNDUyNi1iODYxLTk0MGQ0OWQzYTU5NA==&quot;},&quot;query&quot;:&quot;query Insights($database: DatabaseEnum!, $tallies: [TallyNames]!, $audienceId: ID!) {\n  insights(\n    inquiry: {database: $database, tallies: $tallies, audienceId: $audienceId}\n  ) {\n    title\n    type\n    config\n    totalCount\n    data {\n      label\n      value\n      percentage\n      hasMaxCount\n      __typename\n    }\n    __typename\n  }\n}\n&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql/</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="sec-ch-ua" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua</stringProp>
+                  <stringProp name="Header.value">&quot;Chromium&quot;;v=&quot;106&quot;, &quot;Google Chrome&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;</stringProp>
+                </elementProp>
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                  <stringProp name="Header.value">?0</stringProp>
+                </elementProp>
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">Bearer eyJraWQiOiJ2OE9MRWlVZlBCTnozTzZhMmF1ZjVsNytIK0RBOUI1SjJ4Q1dKdmVcL01FQT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkMzE4NzRiNi1kZTY5LTQzZDEtOTVjNy00OWNkNzYzNGQ5MTEiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9OVFhzYU5ZaTQiLCJjbGllbnRfaWQiOiI2ZG0zZDVwamJwazUwMG1vdThwZHNpOW1ncCIsIm9yaWdpbl9qdGkiOiIyNzMyZmUwNS05NmFiLTRlM2EtOTE1Ni02ZjBiZjUzY2RjMjAiLCJldmVudF9pZCI6ImMzYjNlYjExLTRhOTMtNDIwNC1hOWE3LWIwYzQwM2RhMjExOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE2NjU0ODUwNTIsImV4cCI6MTY2NTU3MTQ1MiwiaWF0IjoxNjY1NDg1MDUyLCJqdGkiOiJhYTdjMWE1Yy01MDc3LTQ4OWItYjRjMS1hMWQ5ZDhlNjA2NjYiLCJ1c2VybmFtZSI6IjVkZDU5MjVlLTQ5NDktMTFlZC1hYWI1LTgyNmI5NTg0MjIyMyJ9.Xw_HW0dWxNg8RlwuvRfQeZ1WFhCiK15Xn3aK-3ImBJNTbYqj5b15A01jwx4m-4zCkU7kW4Wl36HYqjJnXJNnVf5mPfEzMPrjuo0XI7go-p_6h1PuT-uJFxFZTO_J4zqIYd1C4mJjD_IUZfYcSVWLapu8FoMVwwttMk3HxlGU-thFENJq0Gis95XRk1tIFV-jfqaGAQDug_kq4CMrZp7HEO5-rXagyQ1j4TIiMHYr1t_y0gSPeZuKGZkGkckJQyEXK5eXZ6R9irQikdYjYtgN7Ezd_I0CNVcl25migSNApU2GbvuDQwarEQ1SNUXDP8c1zM2_uZkwBkQGttH9N9VlPg</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-platform" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                  <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="campaigns" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;operationName&quot;:&quot;campaigns&quot;,&quot;variables&quot;:{&quot;database&quot;:&quot;BUSINESS&quot;,&quot;offset&quot;:0,&quot;first&quot;:30},&quot;query&quot;:&quot;query campaigns($hasEmailContent: Boolean, $launchTime_Lte: DateTime, $launchTime_Gte: DateTime, $title: String, $launchStatus: String, $offset: Int, $first: Int, $database: String) {\n  campaigns(\n    hasEmailContent: $hasEmailContent\n    launchTime_Lte: $launchTime_Lte\n    launchTime_Gte: $launchTime_Gte\n    title: $title\n    launchStatus: $launchStatus\n    offset: $offset\n    first: $first\n    database: $database\n  ) {\n    totalCount\n    edges {\n      node {\n        ...CampaignDetailsFragment\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment CampaignDetailsFragment on CampaignType {\n  id\n  title\n  subject\n  isCanSpamCompliant\n  previewText\n  thumbnailUrl\n  jsonFileUrl\n  htmlFileUrl\n  completionStatus\n  hasEmailContent\n  __typename\n  seeds\n  launchTime\n  launchStatus\n  openCount\n  recipientsCount\n  isRecipientsComplete\n  isCampaignInfoComplete\n  isScheduleComplete\n  canLaunch\n  database\n  sender {\n    ...SenderDetailsFragment\n    __typename\n  }\n  recipients {\n    id\n    audience {\n      ...AudienceTypeFragment\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment SenderDetailsFragment on SenderType {\n  fromName\n  replyToEmail\n  fromEmail\n  fromEmailVerificationStatus\n  replyToEmailVerificationStatus\n  address\n  city\n  zip\n  completionStatus\n  companyName\n  __typename\n  state\n  id\n}\n\nfragment AudienceTypeFragment on AudienceType {\n  contactType\n  createdAt\n  database\n  failReason\n  id\n  name\n  audienceSource\n  progress\n  recordsetId\n  status\n  updatedAt\n  __typename\n}\n&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql/</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="sec-ch-ua" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua</stringProp>
+                  <stringProp name="Header.value">&quot;Chromium&quot;;v=&quot;106&quot;, &quot;Google Chrome&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;</stringProp>
+                </elementProp>
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                  <stringProp name="Header.value">?0</stringProp>
+                </elementProp>
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">Bearer eyJraWQiOiJ2OE9MRWlVZlBCTnozTzZhMmF1ZjVsNytIK0RBOUI1SjJ4Q1dKdmVcL01FQT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkMzE4NzRiNi1kZTY5LTQzZDEtOTVjNy00OWNkNzYzNGQ5MTEiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9OVFhzYU5ZaTQiLCJjbGllbnRfaWQiOiI2ZG0zZDVwamJwazUwMG1vdThwZHNpOW1ncCIsIm9yaWdpbl9qdGkiOiIyNzMyZmUwNS05NmFiLTRlM2EtOTE1Ni02ZjBiZjUzY2RjMjAiLCJldmVudF9pZCI6ImMzYjNlYjExLTRhOTMtNDIwNC1hOWE3LWIwYzQwM2RhMjExOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE2NjU0ODUwNTIsImV4cCI6MTY2NTU3MTQ1MiwiaWF0IjoxNjY1NDg1MDUyLCJqdGkiOiJhYTdjMWE1Yy01MDc3LTQ4OWItYjRjMS1hMWQ5ZDhlNjA2NjYiLCJ1c2VybmFtZSI6IjVkZDU5MjVlLTQ5NDktMTFlZC1hYWI1LTgyNmI5NTg0MjIyMyJ9.Xw_HW0dWxNg8RlwuvRfQeZ1WFhCiK15Xn3aK-3ImBJNTbYqj5b15A01jwx4m-4zCkU7kW4Wl36HYqjJnXJNnVf5mPfEzMPrjuo0XI7go-p_6h1PuT-uJFxFZTO_J4zqIYd1C4mJjD_IUZfYcSVWLapu8FoMVwwttMk3HxlGU-thFENJq0Gis95XRk1tIFV-jfqaGAQDug_kq4CMrZp7HEO5-rXagyQ1j4TIiMHYr1t_y0gSPeZuKGZkGkckJQyEXK5eXZ6R9irQikdYjYtgN7Ezd_I0CNVcl25migSNApU2GbvuDQwarEQ1SNUXDP8c1zM2_uZkwBkQGttH9N9VlPg</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-platform" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                  <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="campaignCreate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;operationName&quot;:&quot;campaignCreate&quot;,&quot;variables&quot;:{&quot;input&quot;:{&quot;database&quot;:&quot;BUSINESS&quot;,&quot;title&quot;:&quot;${random}&quot;,&quot;subject&quot;:null,&quot;previewText&quot;:null,&quot;audiences&quot;:[&quot;QXVkaWVuY2VUeXBlOjllYTZjNzM2LTNiMmItNDUyNi1iODYxLTk0MGQ0OWQzYTU5NA==&quot;]}},&quot;query&quot;:&quot;mutation campaignCreate($input: CampaignCreateInput!) {\n  campaignCreate(input: $input) {\n    campaign {\n      ...CampaignDetailsFragment\n      __typename\n    }\n    errors {\n      ...MarketingErrorFragment\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment CampaignDetailsFragment on CampaignType {\n  id\n  title\n  subject\n  isCanSpamCompliant\n  previewText\n  thumbnailUrl\n  jsonFileUrl\n  htmlFileUrl\n  completionStatus\n  hasEmailContent\n  __typename\n  seeds\n  launchTime\n  launchStatus\n  openCount\n  recipientsCount\n  isRecipientsComplete\n  isCampaignInfoComplete\n  isScheduleComplete\n  canLaunch\n  database\n  sender {\n    ...SenderDetailsFragment\n    __typename\n  }\n  recipients {\n    id\n    audience {\n      ...AudienceTypeFragment\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment SenderDetailsFragment on SenderType {\n  fromName\n  replyToEmail\n  fromEmail\n  fromEmailVerificationStatus\n  replyToEmailVerificationStatus\n  address\n  city\n  zip\n  completionStatus\n  companyName\n  __typename\n  state\n  id\n}\n\nfragment AudienceTypeFragment on AudienceType {\n  contactType\n  createdAt\n  database\n  failReason\n  id\n  name\n  audienceSource\n  progress\n  recordsetId\n  status\n  updatedAt\n  __typename\n}\n\nfragment MarketingErrorFragment on MarketingError {\n  field\n  message\n  code\n  missingImages\n  __typename\n}\n&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql/</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="sec-ch-ua" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua</stringProp>
+                  <stringProp name="Header.value">&quot;Chromium&quot;;v=&quot;106&quot;, &quot;Google Chrome&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;</stringProp>
+                </elementProp>
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                  <stringProp name="Header.value">?0</stringProp>
+                </elementProp>
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">Bearer eyJraWQiOiJ2OE9MRWlVZlBCTnozTzZhMmF1ZjVsNytIK0RBOUI1SjJ4Q1dKdmVcL01FQT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkMzE4NzRiNi1kZTY5LTQzZDEtOTVjNy00OWNkNzYzNGQ5MTEiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9OVFhzYU5ZaTQiLCJjbGllbnRfaWQiOiI2ZG0zZDVwamJwazUwMG1vdThwZHNpOW1ncCIsIm9yaWdpbl9qdGkiOiIyNzMyZmUwNS05NmFiLTRlM2EtOTE1Ni02ZjBiZjUzY2RjMjAiLCJldmVudF9pZCI6ImMzYjNlYjExLTRhOTMtNDIwNC1hOWE3LWIwYzQwM2RhMjExOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE2NjU0ODUwNTIsImV4cCI6MTY2NTU3MTQ1MiwiaWF0IjoxNjY1NDg1MDUyLCJqdGkiOiJhYTdjMWE1Yy01MDc3LTQ4OWItYjRjMS1hMWQ5ZDhlNjA2NjYiLCJ1c2VybmFtZSI6IjVkZDU5MjVlLTQ5NDktMTFlZC1hYWI1LTgyNmI5NTg0MjIyMyJ9.Xw_HW0dWxNg8RlwuvRfQeZ1WFhCiK15Xn3aK-3ImBJNTbYqj5b15A01jwx4m-4zCkU7kW4Wl36HYqjJnXJNnVf5mPfEzMPrjuo0XI7go-p_6h1PuT-uJFxFZTO_J4zqIYd1C4mJjD_IUZfYcSVWLapu8FoMVwwttMk3HxlGU-thFENJq0Gis95XRk1tIFV-jfqaGAQDug_kq4CMrZp7HEO5-rXagyQ1j4TIiMHYr1t_y0gSPeZuKGZkGkckJQyEXK5eXZ6R9irQikdYjYtgN7Ezd_I0CNVcl25migSNApU2GbvuDQwarEQ1SNUXDP8c1zM2_uZkwBkQGttH9N9VlPg</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-platform" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                  <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="campaignUpdate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;operationName&quot;:&quot;campaignUpdate&quot;,&quot;variables&quot;:{&quot;id&quot;:&quot;Q2FtcGFpZ25UeXBlOmU5ZjA2NGIyLWRhNTgtNDkwOC1iMjZiLWZkMjhiY2YyZGE2Yw==&quot;,&quot;input&quot;:{&quot;database&quot;:&quot;BUSINESS&quot;,&quot;title&quot;:&quot;Untitled Campaign(copy)&quot;,&quot;subject&quot;:null,&quot;previewText&quot;:null,&quot;audiences&quot;:[&quot;QXVkaWVuY2VUeXBlOjllYTZjNzM2LTNiMmItNDUyNi1iODYxLTk0MGQ0OWQzYTU5NA==&quot;],&quot;seeds&quot;:[&quot;ram@yopmail.com&quot;]}},&quot;query&quot;:&quot;mutation campaignUpdate($id: ID!, $input: CampaignUpdateInput!) {\n  campaignUpdate(id: $id, input: $input) {\n    campaign {\n      ...CampaignDetailsFragment\n      __typename\n    }\n    errors {\n      ...MarketingErrorFragment\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment CampaignDetailsFragment on CampaignType {\n  id\n  title\n  subject\n  isCanSpamCompliant\n  previewText\n  thumbnailUrl\n  jsonFileUrl\n  htmlFileUrl\n  completionStatus\n  hasEmailContent\n  __typename\n  seeds\n  launchTime\n  launchStatus\n  openCount\n  recipientsCount\n  isRecipientsComplete\n  isCampaignInfoComplete\n  isScheduleComplete\n  canLaunch\n  database\n  sender {\n    ...SenderDetailsFragment\n    __typename\n  }\n  recipients {\n    id\n    audience {\n      ...AudienceTypeFragment\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment SenderDetailsFragment on SenderType {\n  fromName\n  replyToEmail\n  fromEmail\n  fromEmailVerificationStatus\n  replyToEmailVerificationStatus\n  address\n  city\n  zip\n  completionStatus\n  companyName\n  __typename\n  state\n  id\n}\n\nfragment AudienceTypeFragment on AudienceType {\n  contactType\n  createdAt\n  database\n  failReason\n  id\n  name\n  audienceSource\n  progress\n  recordsetId\n  status\n  updatedAt\n  __typename\n}\n\nfragment MarketingErrorFragment on MarketingError {\n  field\n  message\n  code\n  missingImages\n  __typename\n}\n&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql/</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="sec-ch-ua" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua</stringProp>
+                  <stringProp name="Header.value">&quot;Chromium&quot;;v=&quot;106&quot;, &quot;Google Chrome&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;</stringProp>
+                </elementProp>
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                  <stringProp name="Header.value">?0</stringProp>
+                </elementProp>
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">Bearer eyJraWQiOiJ2OE9MRWlVZlBCTnozTzZhMmF1ZjVsNytIK0RBOUI1SjJ4Q1dKdmVcL01FQT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkMzE4NzRiNi1kZTY5LTQzZDEtOTVjNy00OWNkNzYzNGQ5MTEiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9OVFhzYU5ZaTQiLCJjbGllbnRfaWQiOiI2ZG0zZDVwamJwazUwMG1vdThwZHNpOW1ncCIsIm9yaWdpbl9qdGkiOiIyNzMyZmUwNS05NmFiLTRlM2EtOTE1Ni02ZjBiZjUzY2RjMjAiLCJldmVudF9pZCI6ImMzYjNlYjExLTRhOTMtNDIwNC1hOWE3LWIwYzQwM2RhMjExOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE2NjU0ODUwNTIsImV4cCI6MTY2NTU3MTQ1MiwiaWF0IjoxNjY1NDg1MDUyLCJqdGkiOiJhYTdjMWE1Yy01MDc3LTQ4OWItYjRjMS1hMWQ5ZDhlNjA2NjYiLCJ1c2VybmFtZSI6IjVkZDU5MjVlLTQ5NDktMTFlZC1hYWI1LTgyNmI5NTg0MjIyMyJ9.Xw_HW0dWxNg8RlwuvRfQeZ1WFhCiK15Xn3aK-3ImBJNTbYqj5b15A01jwx4m-4zCkU7kW4Wl36HYqjJnXJNnVf5mPfEzMPrjuo0XI7go-p_6h1PuT-uJFxFZTO_J4zqIYd1C4mJjD_IUZfYcSVWLapu8FoMVwwttMk3HxlGU-thFENJq0Gis95XRk1tIFV-jfqaGAQDug_kq4CMrZp7HEO5-rXagyQ1j4TIiMHYr1t_y0gSPeZuKGZkGkckJQyEXK5eXZ6R9irQikdYjYtgN7Ezd_I0CNVcl25migSNApU2GbvuDQwarEQ1SNUXDP8c1zM2_uZkwBkQGttH9N9VlPg</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-platform" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                  <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="campaignJsonImport" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;operationName&quot;:&quot;campaignJsonImport&quot;,&quot;variables&quot;:{&quot;id&quot;:&quot;Q2FtcGFpZ25UeXBlOmU5ZjA2NGIyLWRhNTgtNDkwOC1iMjZiLWZkMjhiY2YyZGE2Yw==&quot;,&quot;json&quot;:{&quot;title&quot;:&quot;Untitled Campaign(copy)&quot;,&quot;body&quot;:{&quot;eid&quot;:&quot;root&quot;,&quot;type&quot;:&quot;body&quot;,&quot;children&quot;:[],&quot;attrs&quot;:{&quot;usedColors&quot;:[&quot;#595959&quot;,&quot;#000000&quot;,&quot;#cccccc&quot;,&quot;#cc0000&quot;,&quot;#FCFCFC&quot;,&quot;#5555ff&quot;,&quot;#FDFDFD&quot;,&quot;#FBFBFB&quot;,&quot;#999999&quot;,&quot;#f2f2f2&quot;,&quot;#ffffff&quot;]},&quot;style&quot;:{&quot;background-color&quot;:&quot;#FFFFFF&quot;,&quot;background-position&quot;:&quot;center center&quot;,&quot;background-repeat&quot;:&quot;no-repeat&quot;,&quot;body-width&quot;:600},&quot;version&quot;:&quot;2.0.0&quot;},&quot;variables&quot;:[],&quot;fontFiles&quot;:{}}},&quot;query&quot;:&quot;mutation campaignJsonImport($id: ID!, $json: JSONScalar!) {\n  campaignJsonImport(id: $id, json: $json) {\n    campaign {\n      ...CampaignDetailsFragment\n      __typename\n    }\n    errors {\n      ...MarketingErrorFragment\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment CampaignDetailsFragment on CampaignType {\n  id\n  title\n  subject\n  isCanSpamCompliant\n  previewText\n  thumbnailUrl\n  jsonFileUrl\n  htmlFileUrl\n  completionStatus\n  hasEmailContent\n  __typename\n  seeds\n  launchTime\n  launchStatus\n  openCount\n  recipientsCount\n  isRecipientsComplete\n  isCampaignInfoComplete\n  isScheduleComplete\n  canLaunch\n  database\n  sender {\n    ...SenderDetailsFragment\n    __typename\n  }\n  recipients {\n    id\n    audience {\n      ...AudienceTypeFragment\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment SenderDetailsFragment on SenderType {\n  fromName\n  replyToEmail\n  fromEmail\n  fromEmailVerificationStatus\n  replyToEmailVerificationStatus\n  address\n  city\n  zip\n  completionStatus\n  companyName\n  __typename\n  state\n  id\n}\n\nfragment AudienceTypeFragment on AudienceType {\n  contactType\n  createdAt\n  database\n  failReason\n  id\n  name\n  audienceSource\n  progress\n  recordsetId\n  status\n  updatedAt\n  __typename\n}\n\nfragment MarketingErrorFragment on MarketingError {\n  field\n  message\n  code\n  missingImages\n  __typename\n}\n&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql/</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="sec-ch-ua" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua</stringProp>
+                  <stringProp name="Header.value">&quot;Chromium&quot;;v=&quot;106&quot;, &quot;Google Chrome&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;</stringProp>
+                </elementProp>
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                  <stringProp name="Header.value">?0</stringProp>
+                </elementProp>
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">Bearer eyJraWQiOiJ2OE9MRWlVZlBCTnozTzZhMmF1ZjVsNytIK0RBOUI1SjJ4Q1dKdmVcL01FQT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkMzE4NzRiNi1kZTY5LTQzZDEtOTVjNy00OWNkNzYzNGQ5MTEiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9OVFhzYU5ZaTQiLCJjbGllbnRfaWQiOiI2ZG0zZDVwamJwazUwMG1vdThwZHNpOW1ncCIsIm9yaWdpbl9qdGkiOiIyNzMyZmUwNS05NmFiLTRlM2EtOTE1Ni02ZjBiZjUzY2RjMjAiLCJldmVudF9pZCI6ImMzYjNlYjExLTRhOTMtNDIwNC1hOWE3LWIwYzQwM2RhMjExOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE2NjU0ODUwNTIsImV4cCI6MTY2NTU3MTQ1MiwiaWF0IjoxNjY1NDg1MDUyLCJqdGkiOiJhYTdjMWE1Yy01MDc3LTQ4OWItYjRjMS1hMWQ5ZDhlNjA2NjYiLCJ1c2VybmFtZSI6IjVkZDU5MjVlLTQ5NDktMTFlZC1hYWI1LTgyNmI5NTg0MjIyMyJ9.Xw_HW0dWxNg8RlwuvRfQeZ1WFhCiK15Xn3aK-3ImBJNTbYqj5b15A01jwx4m-4zCkU7kW4Wl36HYqjJnXJNnVf5mPfEzMPrjuo0XI7go-p_6h1PuT-uJFxFZTO_J4zqIYd1C4mJjD_IUZfYcSVWLapu8FoMVwwttMk3HxlGU-thFENJq0Gis95XRk1tIFV-jfqaGAQDug_kq4CMrZp7HEO5-rXagyQ1j4TIiMHYr1t_y0gSPeZuKGZkGkckJQyEXK5eXZ6R9irQikdYjYtgN7Ezd_I0CNVcl25migSNApU2GbvuDQwarEQ1SNUXDP8c1zM2_uZkwBkQGttH9N9VlPg</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-platform" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                  <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="events" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;operationName&quot;:&quot;events&quot;,&quot;variables&quot;:{&quot;startTime_Gte&quot;:&quot;2022-10-11T10:47:14.980Z&quot;,&quot;startTime_Lte&quot;:&quot;2022-10-31T18:29:59.999Z&quot;},&quot;query&quot;:&quot;query events($startTime_Lte: DateTime, $startTime_Gte: DateTime) {\n  events(startTime_Lte: $startTime_Lte, startTime_Gte: $startTime_Gte) {\n    edges {\n      node {\n        name\n        startTime\n        endTime\n        __typename\n        id\n      }\n      __typename\n    }\n    __typename\n  }\n}\n&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql/</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="sec-ch-ua" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua</stringProp>
+                  <stringProp name="Header.value">&quot;Chromium&quot;;v=&quot;106&quot;, &quot;Google Chrome&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;</stringProp>
+                </elementProp>
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                  <stringProp name="Header.value">?0</stringProp>
+                </elementProp>
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">Bearer eyJraWQiOiJ2OE9MRWlVZlBCTnozTzZhMmF1ZjVsNytIK0RBOUI1SjJ4Q1dKdmVcL01FQT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkMzE4NzRiNi1kZTY5LTQzZDEtOTVjNy00OWNkNzYzNGQ5MTEiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9OVFhzYU5ZaTQiLCJjbGllbnRfaWQiOiI2ZG0zZDVwamJwazUwMG1vdThwZHNpOW1ncCIsIm9yaWdpbl9qdGkiOiIyNzMyZmUwNS05NmFiLTRlM2EtOTE1Ni02ZjBiZjUzY2RjMjAiLCJldmVudF9pZCI6ImMzYjNlYjExLTRhOTMtNDIwNC1hOWE3LWIwYzQwM2RhMjExOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE2NjU0ODUwNTIsImV4cCI6MTY2NTU3MTQ1MiwiaWF0IjoxNjY1NDg1MDUyLCJqdGkiOiJhYTdjMWE1Yy01MDc3LTQ4OWItYjRjMS1hMWQ5ZDhlNjA2NjYiLCJ1c2VybmFtZSI6IjVkZDU5MjVlLTQ5NDktMTFlZC1hYWI1LTgyNmI5NTg0MjIyMyJ9.Xw_HW0dWxNg8RlwuvRfQeZ1WFhCiK15Xn3aK-3ImBJNTbYqj5b15A01jwx4m-4zCkU7kW4Wl36HYqjJnXJNnVf5mPfEzMPrjuo0XI7go-p_6h1PuT-uJFxFZTO_J4zqIYd1C4mJjD_IUZfYcSVWLapu8FoMVwwttMk3HxlGU-thFENJq0Gis95XRk1tIFV-jfqaGAQDug_kq4CMrZp7HEO5-rXagyQ1j4TIiMHYr1t_y0gSPeZuKGZkGkckJQyEXK5eXZ6R9irQikdYjYtgN7Ezd_I0CNVcl25migSNApU2GbvuDQwarEQ1SNUXDP8c1zM2_uZkwBkQGttH9N9VlPg</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-platform" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                  <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="campaignClone" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;operationName&quot;:&quot;campaignClone&quot;,&quot;variables&quot;:{&quot;id&quot;:&quot;Q2FtcGFpZ25UeXBlOmU5ZjA2NGIyLWRhNTgtNDkwOC1iMjZiLWZkMjhiY2YyZGE2Yw==&quot;},&quot;query&quot;:&quot;mutation campaignClone($id: ID!) {\n  campaignClone(id: $id) {\n    campaign {\n      ...CampaignDetailsFragment\n      __typename\n    }\n    errors {\n      ...MarketingErrorFragment\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment CampaignDetailsFragment on CampaignType {\n  id\n  title\n  subject\n  isCanSpamCompliant\n  previewText\n  thumbnailUrl\n  jsonFileUrl\n  htmlFileUrl\n  completionStatus\n  hasEmailContent\n  __typename\n  seeds\n  launchTime\n  launchStatus\n  openCount\n  recipientsCount\n  isRecipientsComplete\n  isCampaignInfoComplete\n  isScheduleComplete\n  canLaunch\n  database\n  sender {\n    ...SenderDetailsFragment\n    __typename\n  }\n  recipients {\n    id\n    audience {\n      ...AudienceTypeFragment\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment SenderDetailsFragment on SenderType {\n  fromName\n  replyToEmail\n  fromEmail\n  fromEmailVerificationStatus\n  replyToEmailVerificationStatus\n  address\n  city\n  zip\n  completionStatus\n  companyName\n  __typename\n  state\n  id\n}\n\nfragment AudienceTypeFragment on AudienceType {\n  contactType\n  createdAt\n  database\n  failReason\n  id\n  name\n  audienceSource\n  progress\n  recordsetId\n  status\n  updatedAt\n  __typename\n}\n\nfragment MarketingErrorFragment on MarketingError {\n  field\n  message\n  code\n  missingImages\n  __typename\n}\n&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql/</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="sec-ch-ua" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua</stringProp>
+                  <stringProp name="Header.value">&quot;Chromium&quot;;v=&quot;106&quot;, &quot;Google Chrome&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;</stringProp>
+                </elementProp>
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                  <stringProp name="Header.value">?0</stringProp>
+                </elementProp>
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">Bearer eyJraWQiOiJ2OE9MRWlVZlBCTnozTzZhMmF1ZjVsNytIK0RBOUI1SjJ4Q1dKdmVcL01FQT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkMzE4NzRiNi1kZTY5LTQzZDEtOTVjNy00OWNkNzYzNGQ5MTEiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9OVFhzYU5ZaTQiLCJjbGllbnRfaWQiOiI2ZG0zZDVwamJwazUwMG1vdThwZHNpOW1ncCIsIm9yaWdpbl9qdGkiOiIyNzMyZmUwNS05NmFiLTRlM2EtOTE1Ni02ZjBiZjUzY2RjMjAiLCJldmVudF9pZCI6ImMzYjNlYjExLTRhOTMtNDIwNC1hOWE3LWIwYzQwM2RhMjExOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE2NjU0ODUwNTIsImV4cCI6MTY2NTU3MTQ1MiwiaWF0IjoxNjY1NDg1MDUyLCJqdGkiOiJhYTdjMWE1Yy01MDc3LTQ4OWItYjRjMS1hMWQ5ZDhlNjA2NjYiLCJ1c2VybmFtZSI6IjVkZDU5MjVlLTQ5NDktMTFlZC1hYWI1LTgyNmI5NTg0MjIyMyJ9.Xw_HW0dWxNg8RlwuvRfQeZ1WFhCiK15Xn3aK-3ImBJNTbYqj5b15A01jwx4m-4zCkU7kW4Wl36HYqjJnXJNnVf5mPfEzMPrjuo0XI7go-p_6h1PuT-uJFxFZTO_J4zqIYd1C4mJjD_IUZfYcSVWLapu8FoMVwwttMk3HxlGU-thFENJq0Gis95XRk1tIFV-jfqaGAQDug_kq4CMrZp7HEO5-rXagyQ1j4TIiMHYr1t_y0gSPeZuKGZkGkckJQyEXK5eXZ6R9irQikdYjYtgN7Ezd_I0CNVcl25migSNApU2GbvuDQwarEQ1SNUXDP8c1zM2_uZkwBkQGttH9N9VlPg</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-platform" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                  <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="campaignDelete" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;operationName&quot;:&quot;campaignDelete&quot;,&quot;variables&quot;:{&quot;id&quot;:&quot;Q2FtcGFpZ25UeXBlOjNjNjE1NzBmLTBhZjMtNGJmYy05OTVmLWQ1MmQ2MjM5ZDIzZQ==&quot;},&quot;query&quot;:&quot;mutation campaignDelete($id: ID!) {\n  campaignDelete(id: $id) {\n    campaign {\n      id\n      previewText\n      __typename\n    }\n    errors {\n      message\n      code\n      __typename\n    }\n    __typename\n  }\n}\n&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">graphql/</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="sec-ch-ua" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua</stringProp>
+                  <stringProp name="Header.value">&quot;Chromium&quot;;v=&quot;106&quot;, &quot;Google Chrome&quot;;v=&quot;106&quot;, &quot;Not;A=Brand&quot;;v=&quot;99&quot;</stringProp>
+                </elementProp>
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                  <stringProp name="Header.value">?0</stringProp>
+                </elementProp>
+                <elementProp name="authorization" elementType="Header">
+                  <stringProp name="Header.name">authorization</stringProp>
+                  <stringProp name="Header.value">Bearer eyJraWQiOiJ2OE9MRWlVZlBCTnozTzZhMmF1ZjVsNytIK0RBOUI1SjJ4Q1dKdmVcL01FQT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkMzE4NzRiNi1kZTY5LTQzZDEtOTVjNy00OWNkNzYzNGQ5MTEiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9OVFhzYU5ZaTQiLCJjbGllbnRfaWQiOiI2ZG0zZDVwamJwazUwMG1vdThwZHNpOW1ncCIsIm9yaWdpbl9qdGkiOiIyNzMyZmUwNS05NmFiLTRlM2EtOTE1Ni02ZjBiZjUzY2RjMjAiLCJldmVudF9pZCI6ImMzYjNlYjExLTRhOTMtNDIwNC1hOWE3LWIwYzQwM2RhMjExOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE2NjU0ODUwNTIsImV4cCI6MTY2NTU3MTQ1MiwiaWF0IjoxNjY1NDg1MDUyLCJqdGkiOiJhYTdjMWE1Yy01MDc3LTQ4OWItYjRjMS1hMWQ5ZDhlNjA2NjYiLCJ1c2VybmFtZSI6IjVkZDU5MjVlLTQ5NDktMTFlZC1hYWI1LTgyNmI5NTg0MjIyMyJ9.Xw_HW0dWxNg8RlwuvRfQeZ1WFhCiK15Xn3aK-3ImBJNTbYqj5b15A01jwx4m-4zCkU7kW4Wl36HYqjJnXJNnVf5mPfEzMPrjuo0XI7go-p_6h1PuT-uJFxFZTO_J4zqIYd1C4mJjD_IUZfYcSVWLapu8FoMVwwttMk3HxlGU-thFENJq0Gis95XRk1tIFV-jfqaGAQDug_kq4CMrZp7HEO5-rXagyQ1j4TIiMHYr1t_y0gSPeZuKGZkGkckJQyEXK5eXZ6R9irQikdYjYtgN7Ezd_I0CNVcl25migSNApU2GbvuDQwarEQ1SNUXDP8c1zM2_uZkwBkQGttH9N9VlPg</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua-platform" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                  <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
