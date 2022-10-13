@@ -7,7 +7,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         
-      - name: Run JMeter Tests
+      - name: Run JMeter Test
         uses: ./
         with:
           test-plan-path: ./home/runner/work/Caldera_Performance/Campaign.jmx
