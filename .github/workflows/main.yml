@@ -10,7 +10,7 @@ jobs:
       - name: Run JMeter Tests
         uses: ./
         with:
-          test-plan-path: ./home/runner/work/Caldera_Performance/Caldera_Performance/Campaign.jmx
+          test-plan-path: ./home/runner/work/Caldera_Performance/Campaign.jmx
           args: ""
           
       - name: Upload Results
