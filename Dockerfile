@@ -28,4 +28,4 @@ RUN apk --no-cache add curl ca-certificates openjdk9-jre && \
 # Downloading CMD Runner
 
 
-ENTRYPOINT [ "/entrypoint.sh" ]
+ENTRYPOINT
